@@ -22,3 +22,8 @@ There are also two functions in the http package that look similar, and are used
 
 1. http.Handle - a function that accepts a pattern and an http.Handler as its arguments.
 2. http.HandleFunc - a function that accepts a pattern and a function that looks like a http.HandlerFunc as its arguments.
+
+https://go-chi.io/#/ or alternative of gorilla mux used in v1 course
+https://github.com/gorilla/mux
+Why use gorilla mux instead of ServeMux type?
+A lot of things aren't easy to do directly, 3rd party library can handle these complications. For ex: dynamic parameters.GET /galleries/:galleryId for example Amazon does this with Id's in their paths for items where the rest of the path stays the same. So the ID Is apart of the URL. Common to have dynami variables, plus, paths can get further complex. Again, simplifies the work.
