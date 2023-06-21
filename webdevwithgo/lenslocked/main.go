@@ -1,22 +1,17 @@
 package main
 
-// `go install github.com/cortesi/modd/cmd/modd@latest` for Modd at global level
-
 import (
 	"fmt"
 	"net/http"
-	// "os"
 )
 
 func pathHandler(w http.ResponseWriter, r *http.Request) {
 	// fmt.Fprint(w, r.URL.Path) // ability to get the path off the request
-	// if r.URL.Path == "/" {
-	// 	homeHandler(w, r)
-	// 	return
-	// } else if r.URL.Path == "/contact" {
-	// 	contactHandler(w, r)
-	// 	return
-	// }
+	// fmt.Fprint(w, r.URL.Path)
+	// https://pkg.go.dev/net/url#URL encoding.decoding raw path
+	// https://meyerweb.com/eric/tools/dencoder/ helpful
+	// fmt.Fprint(w, r.URL.RawPath)
+
 	// use a switch instead
 	switch r.URL.Path {
 	case "/":
@@ -24,7 +19,6 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 	case "/contact":
 		contactHandler(w, r)
 	default:
-		// TODO: handle page not found error - 404
 		notFoundHandler(w, r)
 	}
 }
@@ -49,10 +43,7 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	// fmt.Fprint(os.Stdout, "Hello World!")
-	http.HandleFunc("/", pathHandler) // testing r.URL.Path
-	// http.HandleFunc("/", homeHandler)
-	// http.HandleFunc("/contact", contactHandler)
+	http.HandleFunc("/", pathHandler)
 	fmt.Println("Starting server on http://localhost:3000...")
 	http.ListenAndServe(":3000", nil)
 }
