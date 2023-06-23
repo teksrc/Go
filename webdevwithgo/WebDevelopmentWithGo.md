@@ -27,3 +27,8 @@ https://go-chi.io/#/ or alternative of gorilla mux used in v1 course
 https://github.com/gorilla/mux
 Why use gorilla mux instead of ServeMux type?
 A lot of things aren't easy to do directly, 3rd party library can handle these complications. For ex: dynamic parameters.GET /galleries/:galleryId for example Amazon does this with Id's in their paths for items where the rest of the path stays the same. So the ID Is apart of the URL. Common to have dynami variables, plus, paths can get further complex. Again, simplifies the work.
+
+https://github.com/go-chi/chi#url-parameters Chi url parameters
+
+Helpful little article for Restful routing with Chi in Go:
+https://thedevelopercafe.com/articles/restful-routing-with-chi-in-go-d05a2f952b3d

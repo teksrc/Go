@@ -8,6 +8,15 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 )
 
+
+func userHandler(w http.ResponseWriter, r *http.Request) {
+	username := chi.URLParam(r, "username") // 👈 getting path param
+		_, err := w.Write([]byte("Hello " + username))
+		if err != nil {
+			fmt.Println(err)
+		}
+}
+
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8" )
 	fmt.Fprint(w, "<h1>Welcome to an awesome Go Web API!</h1>")
@@ -42,11 +51,14 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Page Not Found", http.StatusNotFound)
 }
 
+
+
 func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 	r.Get("/", homeHandler)
 	r.Get("/contact", contactHandler)
+	r.Get("/user/{username}", userHandler)
 	r.Get("/faq", faqHandler)
 	r.NotFound(notFoundHandler)
 	fmt.Println("Starting server on http://localhost:3000...")
