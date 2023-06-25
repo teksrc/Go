@@ -32,3 +32,10 @@ https://github.com/go-chi/chi#url-parameters Chi url parameters
 
 Helpful little article for Restful routing with Chi in Go:
 https://thedevelopercafe.com/articles/restful-routing-with-chi-in-go-d05a2f952b3d
+
+An Introduction to Templates in Go
+https://www.calhoun.io/intro-to-templates/
+https://go.dev/doc/articles/wiki/
+https://pkg.go.dev/text/template#hdr-Actions
+https://html.spec.whatwg.org/multipage/named-characters.html
+https://www.rapidtables.com/web/html/html-codes.html
