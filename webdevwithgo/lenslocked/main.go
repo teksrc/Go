@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -18,8 +19,15 @@ func userHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "text/html; charset=utf-8" )
-	fmt.Fprint(w, "<h1>Welcome to an awesome Go Web API!</h1>")
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	tpl, err := template.ParseFiles("templates/home.html")
+	if err != nil {
+		panic(err) // TODO: Remove the Panic
+	}
+	err = tpl.Execute(w, nil)
+	if err != nil {
+		panic(err) // TODO: Remove the Panic
+	}
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
