@@ -41,12 +41,12 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-	tplPath := filepath.Join("templates", "contact.html")
+	tplPath := filepath.Join("templates", "home.html")
 	executeTemplate(w, tplPath)
 }
 
 func faqHandler(w http.ResponseWriter, r *http.Request) {
-	tplPath := filepath.Join("templates", "faq.html")
+	tplPath := filepath.Join("templates", "home.html")
 	executeTemplate(w, tplPath)
 }
 
