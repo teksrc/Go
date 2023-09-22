@@ -13,6 +13,9 @@ https://pkg.go.dev/net/url#URL encoding.decoding raw path
 https://meyerweb.com/eric/tools/dencoder/ helpful
 https://pkg.go.dev/net/http#pkg-constants
 
+Naming:
+https://go.dev/talks/2014/names.slide#1
+
 There are two main types in the net/http package:
 
 1. http.Handler - an interface with a ServeHTTP method
@@ -39,3 +42,17 @@ https://go.dev/doc/articles/wiki/
 https://pkg.go.dev/text/template#hdr-Actions
 https://html.spec.whatwg.org/multipage/named-characters.html
 https://www.rapidtables.com/web/html/html-codes.html
+
+Alternative structures to MVC in Go
+https://www.gobeyond.dev
+Kat Zien's 2018 gophercon talk on YT https://www.youtube.com/watch?v=oL6JBUk6tj0
+https://blog.jetbrains.com/go/2023/04/11/catching-up-with-kat-zien-on-the-structure-of-go-apps-in-2023/
+
+Use cases for the Go language include:
+
+- Cloud applications.
+- Web development.
+- Database implementations.
+- Distributed networking services.
+- Utilities.
+- IoT devices.
