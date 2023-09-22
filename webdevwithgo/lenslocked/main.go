@@ -54,6 +54,7 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Page Not Found", http.StatusNotFound)
 }
 
+// Temporarily using one template for all handlers to avoid this being html project for now
 func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
