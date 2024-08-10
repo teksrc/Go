@@ -6,6 +6,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+
 	"github.com/joncalhoun/lenslocked/controllers"
 	"github.com/joncalhoun/lenslocked/templates"
 	"github.com/joncalhoun/lenslocked/views"
@@ -21,7 +22,7 @@ func main() {
 		views.Must(views.ParseFS(templates.FS, "home.gohtml"))))
 	r.Get("/contact", controllers.StaticHandler(
 		views.Must(views.ParseFS(templates.FS, "contact.gohtml"))))
-	r.Get("/faq", controllers.StaticHandler(
+	r.Get("/faq", controllers.FAQ(
 		views.Must(views.ParseFS(templates.FS, "faq.gohtml"))))
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "404 Page not found", http.StatusNotFound)
